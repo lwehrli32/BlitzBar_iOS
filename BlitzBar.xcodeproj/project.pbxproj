@@ -11,6 +11,8 @@
 		C5499E7F27A5DCF2009B01E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5499E7E27A5DCF2009B01E9 /* ContentView.swift */; };
 		C5499E8127A5DD00009B01E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5499E8027A5DD00009B01E9 /* Assets.xcassets */; };
 		C5499E8427A5DD00009B01E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5499E8327A5DD00009B01E9 /* Preview Assets.xcassets */; };
+		C5499E8B27A5E200009B01E9 /* BBLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5499E8A27A5E200009B01E9 /* BBLogo.swift */; };
+		C5499E8D27A7832B009B01E9 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5499E8C27A7832B009B01E9 /* CreateAccount.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		C5499E7E27A5DCF2009B01E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C5499E8027A5DD00009B01E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5499E8327A5DD00009B01E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C5499E8A27A5E200009B01E9 /* BBLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBLogo.swift; sourceTree = "<group>"; };
+		C5499E8C27A7832B009B01E9 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +57,9 @@
 			children = (
 				C5499E7C27A5DCF2009B01E9 /* BlitzBarApp.swift */,
 				C5499E7E27A5DCF2009B01E9 /* ContentView.swift */,
+				C5499E8C27A7832B009B01E9 /* CreateAccount.swift */,
 				C5499E8027A5DD00009B01E9 /* Assets.xcassets */,
+				C5499E8A27A5E200009B01E9 /* BBLogo.swift */,
 				C5499E8227A5DD00009B01E9 /* Preview Content */,
 			);
 			path = BlitzBar;
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5499E7F27A5DCF2009B01E9 /* ContentView.swift in Sources */,
+				C5499E8B27A5E200009B01E9 /* BBLogo.swift in Sources */,
 				C5499E7D27A5DCF2009B01E9 /* BlitzBarApp.swift in Sources */,
+				C5499E8D27A7832B009B01E9 /* CreateAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var useremail: String = ""
+    @State private var password: String = ""
+    
     var body: some View {
-        Text("BlitzBar!")
-            .padding()
+        VStack(alignment: .center){
+            BBLogo()
+            Text("BlitzBar")
+                .padding()
+                .font(.title)
+            TextField("Email", text: $useremail)
+                .padding()
+            SecureField("Password", text: $password)
+                .padding()
+        }
+        NavigationLink(destination: CreateAccount()) {
+            Text("Do Something")
+        }
+        Spacer()
     }
 }
 
