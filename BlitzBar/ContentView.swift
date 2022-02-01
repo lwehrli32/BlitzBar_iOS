@@ -7,6 +7,16 @@
 
 import SwiftUI
 
+struct LoginButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .background(.yellow)
+            .foregroundColor(.black)
+            .clipShape(Capsule())
+    }
+}
+
 struct ContentView: View {
     @State private var useremail: String = ""
     @State private var password: String = ""
@@ -21,6 +31,11 @@ struct ContentView: View {
                 .padding()
             SecureField("Password", text: $password)
                 .padding()
+            
+            Button("Login"){
+                print("User is logged in")
+            }
+            .buttonStyle(LoginButtonStyle())
         }
         NavigationLink(destination: CreateAccount()) {
             Text("Do Something")
