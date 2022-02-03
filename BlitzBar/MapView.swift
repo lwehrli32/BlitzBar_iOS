@@ -42,7 +42,7 @@ struct MapView: View {
     var body: some View {
         VStack{
             Map(coordinateRegion: $region)
-            //Menu()
+            Menu()
         }
     }
 }
