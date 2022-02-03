@@ -6,26 +6,9 @@
 //
 
 import SwiftUI
+import Foundation
 
 let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
-
-struct LoginButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .background(.yellow)
-            .foregroundColor(.black)
-            .clipShape(Capsule())
-    }
-}
-
-struct createAccountButtonStyle: ButtonStyle{
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .background(.pink)
-    }
-}
 
 struct ContentView: View {
     
@@ -85,7 +68,7 @@ struct loginView : View{
             }){
                 Text("Login")
             }
-            .buttonStyle(LoginButtonStyle())
+            .buttonStyle(primaryButton())
             
             ZStack(alignment: .bottomLeading){
                 Button(action:{
@@ -93,12 +76,10 @@ struct loginView : View{
                 }){
                     Text("Create Account")
                 }
-                .padding(.top, 50)
-                .foregroundColor(.black)
-                .buttonStyle(createAccountButtonStyle())
+                .buttonStyle(secondaryButton())
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity) // 1
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .accentColor(.black)
                 .background(.white)
     }
