@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C52E14E527AB851F0058E305 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E14E427AB851F0058E305 /* ButtonStyles.swift */; };
+		C52E14E727AC59820058E305 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E14E627AC59820058E305 /* Menu.swift */; };
 		C5499E7D27A5DCF2009B01E9 /* BlitzBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5499E7C27A5DCF2009B01E9 /* BlitzBarApp.swift */; };
 		C5499E7F27A5DCF2009B01E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5499E7E27A5DCF2009B01E9 /* ContentView.swift */; };
 		C5499E8127A5DD00009B01E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5499E8027A5DD00009B01E9 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		C52E14E427AB851F0058E305 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		C52E14E627AC59820058E305 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		C5499E7927A5DCF2009B01E9 /* BlitzBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlitzBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5499E7C27A5DCF2009B01E9 /* BlitzBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlitzBarApp.swift; sourceTree = "<group>"; };
 		C5499E7E27A5DCF2009B01E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				C5499E7E27A5DCF2009B01E9 /* ContentView.swift */,
 				C52E14E427AB851F0058E305 /* ButtonStyles.swift */,
 				C5499E8E27A9938A009B01E9 /* MapView.swift */,
+				C52E14E627AC59820058E305 /* Menu.swift */,
 				C5499E8C27A7832B009B01E9 /* CreateAccount.swift */,
 				C5499E8027A5DD00009B01E9 /* Assets.xcassets */,
 				C5499E8A27A5E200009B01E9 /* BBLogo.swift */,
@@ -151,6 +154,7 @@
 			files = (
 				C5499E7F27A5DCF2009B01E9 /* ContentView.swift in Sources */,
 				C52E14E527AB851F0058E305 /* ButtonStyles.swift in Sources */,
+				C52E14E727AC59820058E305 /* Menu.swift in Sources */,
 				C5499E8B27A5E200009B01E9 /* BBLogo.swift in Sources */,
 				C5499E8F27A9938B009B01E9 /* MapView.swift in Sources */,
 				C5499E7D27A5DCF2009B01E9 /* BlitzBarApp.swift in Sources */,
