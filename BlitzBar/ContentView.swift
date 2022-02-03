@@ -9,7 +9,6 @@ import SwiftUI
 
 let lightGreyColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
 
-
 struct LoginButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -20,15 +19,26 @@ struct LoginButtonStyle: ButtonStyle {
     }
 }
 
+struct createAccountButtonStyle: ButtonStyle{
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .background(.pink)
+    }
+}
+
 struct ContentView: View {
     
     @State var goodSignin = false
+    @State var gotoCreateAccount = false
     
     var body: some View {
         if goodSignin{
+            MapView()
+        }else if gotoCreateAccount{
             CreateAccount()
         }else{
-            loginView(goodSignin: $goodSignin)
+            loginView(goodSignin: $goodSignin, gotoCreateAccount: $gotoCreateAccount)
         }
         
     }
@@ -36,13 +46,11 @@ struct ContentView: View {
 
 struct loginView : View{
     @Binding var goodSignin: Bool
+    @Binding var gotoCreateAccount: Bool
     
     @State var useremail: String = ""
     @State var password: String = ""
     var body: some View{
-        //let preferences = UserDefaults.standard
-        //let loggedInKey = "loggedin"
-        
         VStack(alignment: .center){
             BBLogo()
             Text("BlitzBar")
@@ -73,37 +81,26 @@ struct loginView : View{
             
             Button(action: {
                 print("Login button pressed")
-                //let loggedIn = 1
-                //preferences.set(loggedIn, forKey: loggedInKey)
-                
-                //_ = preferences.synchronize()
                 self.goodSignin = true
-                //let cA = CreateAccount(buttonClick: $showA)
-                print("Login succeeded")
             }){
                 Text("Login")
             }
             .buttonStyle(LoginButtonStyle())
             
             ZStack(alignment: .bottomLeading){
-                Text("Create Account")
-                    .padding(.top, 50)
-                    .foregroundColor(.black)
+                Button(action:{
+                    self.gotoCreateAccount = true
+                }){
+                    Text("Create Account")
+                }
+                .padding(.top, 50)
+                .foregroundColor(.black)
+                .buttonStyle(createAccountButtonStyle())
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity) // 1
                 .accentColor(.black)
                 .background(.white)
-    }
-}
-
-struct AppHome: View {
-    
-    var body: some View {
-        VStack {
-        Text("Hello freaky world!")
-        Text("You are signed in.")
-        }
     }
 }
 
