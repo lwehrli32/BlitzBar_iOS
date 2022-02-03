@@ -21,39 +21,89 @@ struct LoginButtonStyle: ButtonStyle {
 }
 
 struct ContentView: View {
-    @State private var useremail: String = ""
-    @State private var password: String = ""
+    
+    @State var goodSignin = false
     
     var body: some View {
-        let preferences = UserDefaults.standard
-        let loggedInKey = "loggedin"
+        if goodSignin{
+            CreateAccount()
+        }else{
+            loginView(goodSignin: $goodSignin)
+        }
+        
+    }
+}
+
+struct loginView : View{
+    @Binding var goodSignin: Bool
+    
+    @State var useremail: String = ""
+    @State var password: String = ""
+    var body: some View{
+        //let preferences = UserDefaults.standard
+        //let loggedInKey = "loggedin"
         
         VStack(alignment: .center){
             BBLogo()
             Text("BlitzBar")
                 .padding()
                 .font(.title)
-            TextField("Email", text: $useremail)
-                .padding()
-                .background(lightGreyColor)
-            SecureField("Password", text: $password)
-                .padding()
-                .background(lightGreyColor)
+                .foregroundColor(.black)
             
-            Button("Login"){
+            VStack (alignment: .leading){
+                Text("Email")
+                    .foregroundColor(.black)
+            
+                TextField("", text: $useremail)
+                    .padding()
+                    .background(lightGreyColor)
+                    .foregroundColor(.black)
+            }
+            .padding()
+            
+            VStack (alignment: .leading){
+                Text("Password")
+                    .foregroundColor(.black)
+                SecureField("Password", text: $password)
+                    .padding()
+                    .background(lightGreyColor)
+                    .foregroundColor(.black)
+            }
+            .padding()
+            
+            Button(action: {
+                print("Login button pressed")
+                //let loggedIn = 1
+                //preferences.set(loggedIn, forKey: loggedInKey)
                 
-                let loggedIn = 1
-                preferences.set(loggedIn, forKey: loggedInKey)
-                
-                let saved = preferences.synchronize()
-                
-                NavigationLink(destination: MapView()) {
-                }
+                //_ = preferences.synchronize()
+                self.goodSignin = true
+                //let cA = CreateAccount(buttonClick: $showA)
+                print("Login succeeded")
+            }){
+                Text("Login")
             }
             .buttonStyle(LoginButtonStyle())
+            
+            ZStack(alignment: .bottomLeading){
+                Text("Create Account")
+                    .padding(.top, 50)
+                    .foregroundColor(.black)
+            }
         }
-        
-        Spacer()
+        .frame(maxWidth: .infinity, maxHeight: .infinity) // 1
+                .accentColor(.black)
+                .background(.white)
+    }
+}
+
+struct AppHome: View {
+    
+    var body: some View {
+        VStack {
+        Text("Hello freaky world!")
+        Text("You are signed in.")
+        }
     }
 }
 

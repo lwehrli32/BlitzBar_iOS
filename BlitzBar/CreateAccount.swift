@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct CreateAccount: View {
+    @State var goBack = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if goBack{
+            ContentView()
+        }else{
+            Text("hello world!")
+            
+            Button(action:{
+                self.goBack = true
+            }){
+                Text("Go Back")
+            }
+        }
     }
 }
 
