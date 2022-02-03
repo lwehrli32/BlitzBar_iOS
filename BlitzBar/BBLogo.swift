@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BBLogo: View {
     var body: some View {
-        Image("logo_textless-playstore")
+        Image("logo_512x512")
             .resizable()
             .scaledToFit()
             .frame(width: 100, height: 100)
