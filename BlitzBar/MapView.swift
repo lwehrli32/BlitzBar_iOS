@@ -34,21 +34,35 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
 }
 
 struct MapView: View {
+    @StateObject var viewRouter: ViewRouter
     //@StateObject var manager = LocationManager()
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868),
         span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
     )
+    
     var body: some View {
-        VStack{
-            Map(coordinateRegion: $region)
-            Menu()
+        
+        if viewRouter.currentPage == "SettingsView" {
+            SettingsView()
+        }else if viewRouter.currentPage == "FriendsView"{
+            FriendsView()
+        }else if viewRouter.currentPage == "ListView"{
+            ListView()
+        }
+        
+        GeometryReader{ geometry in
+            VStack{
+                Map(coordinateRegion: $region)
+                Menu(viewRouter: viewRouter).frame(width: geometry.size.width, height: geometry.size.height / 15)
+            }
+            .frame(width: geometry.size.width, height: geometry.size.height)
         }
     }
 }
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView()
+        MapView(viewRouter: ViewRouter())
     }
 }

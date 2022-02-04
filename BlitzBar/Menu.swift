@@ -8,47 +8,68 @@
 import SwiftUI
 
 struct Menu: View {
+    @StateObject var viewRouter: ViewRouter
+    
     @State var gotoMap = false
     @State var gotoContent = false
     
+    // icon info
+    @State var map_icon = "map_icon"
+    @State var map_label = "Map"
+    @State var friends_icon = "friends_icon"
+    @State var friends_label = "Friends"
+    @State var settings_icon = "setting_icon"
+    @State var settings_label = "Settings"
+    @State var list_icon = "list_icon"
+    @State var list_label = "Bar List"
+    
+    let num_icons = 4
+    let height_ratio = 2.5
+    
     var body: some View {
-        if gotoMap{
-            MapView()
-        }else if gotoContent{
-            ContentView()
-        }
-        
-        HStack{
-            Button(action:{
-                print("going to map view. . .")
-                self.gotoMap = true
-            }){
-                Image("map_icon")
-                    .padding()
+        GeometryReader{ geometry in
+            HStack{
+                MenuIcons(viewRouter: viewRouter, icon: map_icon, label: map_label, width: geometry.size.width/CGFloat(num_icons), height: geometry.size.height/CGFloat(height_ratio), assignedPage: "MapView")
+                MenuIcons(viewRouter: viewRouter, icon: list_icon, label: list_label, width: geometry.size.width/CGFloat(num_icons), height: geometry.size.height/CGFloat(height_ratio), assignedPage: "ListView")
+                MenuIcons(viewRouter: viewRouter, icon: friends_icon, label: friends_label, width: geometry.size.width/CGFloat(num_icons), height: geometry.size.height/CGFloat(height_ratio), assignedPage: "FriendView")
+                MenuIcons(viewRouter: viewRouter, icon: settings_icon, label: settings_label, width: geometry.size.width/CGFloat(num_icons), height: geometry.size.height/CGFloat(height_ratio), assignedPage: "SettingsView")
             }
-            
-            Button(action:{
-                print("Going to content view. . . ")
-                self.gotoContent = true
-            }){
-                Image("friends_icon")
-                    .padding()
-            }
-            
-            Image("list_icon")
-                .padding()
-            
-            Image("setting_icon")
-                .padding()
-            
+            .frame(width: geometry.size.width, height: geometry.size.height)
+            .background(.white)
         }
-        .background(.white)
-        .frame(maxWidth: .infinity, maxHeight: 20)
+    }
+}
+
+struct MenuIcons: View {
+    
+    @StateObject var viewRouter: ViewRouter
+    let icon, label: String
+    let width, height: CGFloat
+    let assignedPage: String
+    
+    var body: some View{
+        VStack{
+            Image(self.icon)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: width, height: height)
+                .padding(.top, 10)
+            Text(self.label)
+                .font(.footnote)
+                .foregroundColor(.black)
+            Spacer()
+        }
+        .onTapGesture {
+             viewRouter.currentPage = assignedPage
+         }
+        .edgesIgnoringSafeArea(.bottom)
+        .padding(.horizontal, -4)
+        .foregroundColor(viewRouter.currentPage == assignedPage ? Color(.black) : .gray)
     }
 }
 
 struct Menu_Previews: PreviewProvider {
     static var previews: some View {
-        Menu()
+        Menu(viewRouter: ViewRouter())
     }
 }

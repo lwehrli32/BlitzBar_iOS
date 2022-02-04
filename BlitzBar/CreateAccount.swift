@@ -9,48 +9,50 @@ import SwiftUI
 import Foundation
 
 struct CreateAccount: View {
+    @StateObject var viewRouter: ViewRouter
+    
     @State var goBack = false
     @State var gotoFirstAndLastName = true
     @State var gotoEmail = false
     
     var body: some View {
         if goBack{
-            ContentView()
+            ContentView(viewRouter: viewRouter)
         }else{
-            VStack(alignment: .center){
-                BBLogo()
-                
-                Text("Create BlitzBar Account")
-                    .padding()
-                    .font(.title2)
-                    .foregroundColor(.black)
-                
-                if gotoFirstAndLastName{
-                    show_first_and_last_name(gotoFirstAndLastName: $gotoFirstAndLastName, gotoEmail: $gotoEmail)
-                }else if gotoEmail{
-                    show_email()
-                }
-                
-                ZStack(alignment: .bottomLeading){
-                    Button(action:{
-                        self.goBack = true
-                    }){
-                        Text("Login")
+            GeometryReader{ geometry in
+                VStack(alignment: .center){
+                    BBLogo()
+                    
+                    Text("Create BlitzBar Account")
+                        .padding()
+                        .font(.title2)
+                        .foregroundColor(.black)
+                    
+                    if gotoFirstAndLastName{
+                        show_first_and_last_name(gotoFirstAndLastName: $gotoFirstAndLastName, gotoEmail: $gotoEmail)
+                    }else if gotoEmail{
+                        show_email()
                     }
-                    .buttonStyle(secondaryButton())
+                    
+                    ZStack(alignment: .bottomLeading){
+                        Button(action:{
+                            viewRouter.currentPage = "ContentView"
+                        }){
+                            Text("Login")
+                        }
+                        .buttonStyle(secondaryButton())
+                    }
                 }
+                .frame(width: geometry.size.width, height: geometry.size.height)
+                    .accentColor(.black)
+                    .background(.white)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .accentColor(.black)
-                .background(.white)
         }
     }
 }
 
 struct show_email: View{
     var body: some View{
-        Text("YAY")
-        
         Button(action:{
             print("Next Screen")
         }){
@@ -101,6 +103,6 @@ struct show_first_and_last_name: View{
 
 struct CreateAccount_Previews: PreviewProvider {
     static var previews: some View {
-        CreateAccount()
+        CreateAccount(viewRouter: ViewRouter())
     }
 }

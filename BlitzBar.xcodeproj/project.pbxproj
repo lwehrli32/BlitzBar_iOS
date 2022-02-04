@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		C52E14E527AB851F0058E305 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E14E427AB851F0058E305 /* ButtonStyles.swift */; };
 		C52E14E727AC59820058E305 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E14E627AC59820058E305 /* Menu.swift */; };
+		C52E14E927ACBC360058E305 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E14E827ACBC360058E305 /* ViewRouter.swift */; };
+		C52E14EB27ACC0800058E305 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E14EA27ACC0800058E305 /* ListView.swift */; };
+		C52E14ED27ACC0A20058E305 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E14EC27ACC0A20058E305 /* SettingsView.swift */; };
+		C52E14EF27ACC0AF0058E305 /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52E14EE27ACC0AF0058E305 /* FriendsView.swift */; };
 		C5499E7D27A5DCF2009B01E9 /* BlitzBarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5499E7C27A5DCF2009B01E9 /* BlitzBarApp.swift */; };
 		C5499E7F27A5DCF2009B01E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5499E7E27A5DCF2009B01E9 /* ContentView.swift */; };
 		C5499E8127A5DD00009B01E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5499E8027A5DD00009B01E9 /* Assets.xcassets */; };
@@ -21,6 +25,10 @@
 /* Begin PBXFileReference section */
 		C52E14E427AB851F0058E305 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		C52E14E627AC59820058E305 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		C52E14E827ACBC360058E305 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		C52E14EA27ACC0800058E305 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		C52E14EC27ACC0A20058E305 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C52E14EE27ACC0AF0058E305 /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 		C5499E7927A5DCF2009B01E9 /* BlitzBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlitzBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5499E7C27A5DCF2009B01E9 /* BlitzBarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlitzBarApp.swift; sourceTree = "<group>"; };
 		C5499E7E27A5DCF2009B01E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +69,8 @@
 		C5499E7B27A5DCF2009B01E9 /* BlitzBar */ = {
 			isa = PBXGroup;
 			children = (
+				C52E14E827ACBC360058E305 /* ViewRouter.swift */,
+				C52E14EA27ACC0800058E305 /* ListView.swift */,
 				C5499E7C27A5DCF2009B01E9 /* BlitzBarApp.swift */,
 				C5499E7E27A5DCF2009B01E9 /* ContentView.swift */,
 				C52E14E427AB851F0058E305 /* ButtonStyles.swift */,
@@ -70,6 +80,8 @@
 				C5499E8027A5DD00009B01E9 /* Assets.xcassets */,
 				C5499E8A27A5E200009B01E9 /* BBLogo.swift */,
 				C5499E8227A5DD00009B01E9 /* Preview Content */,
+				C52E14EC27ACC0A20058E305 /* SettingsView.swift */,
+				C52E14EE27ACC0AF0058E305 /* FriendsView.swift */,
 			);
 			path = BlitzBar;
 			sourceTree = "<group>";
@@ -157,8 +169,12 @@
 				C52E14E727AC59820058E305 /* Menu.swift in Sources */,
 				C5499E8B27A5E200009B01E9 /* BBLogo.swift in Sources */,
 				C5499E8F27A9938B009B01E9 /* MapView.swift in Sources */,
+				C52E14ED27ACC0A20058E305 /* SettingsView.swift in Sources */,
 				C5499E7D27A5DCF2009B01E9 /* BlitzBarApp.swift in Sources */,
 				C5499E8D27A7832B009B01E9 /* CreateAccount.swift in Sources */,
+				C52E14EF27ACC0AF0058E305 /* FriendsView.swift in Sources */,
+				C52E14E927ACBC360058E305 /* ViewRouter.swift in Sources */,
+				C52E14EB27ACC0800058E305 /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
