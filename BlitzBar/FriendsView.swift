@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct FriendsView: View {
+    @StateObject var viewRouter: ViewRouter
+    
     var body: some View {
-        Text("Friends")
+        GeometryReader{ geometry in
+            VStack{
+                Text("Friends")
+                Menu(viewRouter: viewRouter).frame(width: geometry.size.width, height: geometry.size.height / 15)
+            }
+            .frame(width: geometry.size.width, height: geometry.size.height)
+        }
     }
 }
 
 struct FriendsView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendsView()
+        FriendsView(viewRouter: ViewRouter())
     }
 }

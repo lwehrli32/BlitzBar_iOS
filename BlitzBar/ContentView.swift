@@ -18,7 +18,7 @@ struct ContentView: View {
     
     var body: some View {
         if goodSignin{
-            MapView(viewRouter: viewRouter)
+            MainRouter(viewRouter: viewRouter)
         }else if gotoCreateAccount{
             CreateAccount(viewRouter: viewRouter)
         }else{

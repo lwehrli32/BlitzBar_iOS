@@ -20,6 +20,7 @@
 		C5499E8B27A5E200009B01E9 /* BBLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5499E8A27A5E200009B01E9 /* BBLogo.swift */; };
 		C5499E8D27A7832B009B01E9 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5499E8C27A7832B009B01E9 /* CreateAccount.swift */; };
 		C5499E8F27A9938B009B01E9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5499E8E27A9938A009B01E9 /* MapView.swift */; };
+		C5F0747527AE0EA60082E40A /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F0747427AE0EA60082E40A /* MainRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		C5499E8A27A5E200009B01E9 /* BBLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBLogo.swift; sourceTree = "<group>"; };
 		C5499E8C27A7832B009B01E9 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		C5499E8E27A9938A009B01E9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		C5F0747427AE0EA60082E40A /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				C52E14E827ACBC360058E305 /* ViewRouter.swift */,
+				C5F0747427AE0EA60082E40A /* MainRouter.swift */,
 				C52E14EA27ACC0800058E305 /* ListView.swift */,
 				C5499E7C27A5DCF2009B01E9 /* BlitzBarApp.swift */,
 				C5499E7E27A5DCF2009B01E9 /* ContentView.swift */,
@@ -169,6 +172,7 @@
 				C52E14E727AC59820058E305 /* Menu.swift in Sources */,
 				C5499E8B27A5E200009B01E9 /* BBLogo.swift in Sources */,
 				C5499E8F27A9938B009B01E9 /* MapView.swift in Sources */,
+				C5F0747527AE0EA60082E40A /* MainRouter.swift in Sources */,
 				C52E14ED27ACC0A20058E305 /* SettingsView.swift in Sources */,
 				C5499E7D27A5DCF2009B01E9 /* BlitzBarApp.swift in Sources */,
 				C5499E8D27A7832B009B01E9 /* CreateAccount.swift in Sources */,

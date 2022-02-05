@@ -31,7 +31,7 @@ struct Menu: View {
             HStack{
                 MenuIcons(viewRouter: viewRouter, icon: map_icon, label: map_label, width: geometry.size.width/CGFloat(num_icons), height: geometry.size.height/CGFloat(height_ratio), assignedPage: "MapView")
                 MenuIcons(viewRouter: viewRouter, icon: list_icon, label: list_label, width: geometry.size.width/CGFloat(num_icons), height: geometry.size.height/CGFloat(height_ratio), assignedPage: "ListView")
-                MenuIcons(viewRouter: viewRouter, icon: friends_icon, label: friends_label, width: geometry.size.width/CGFloat(num_icons), height: geometry.size.height/CGFloat(height_ratio), assignedPage: "FriendView")
+                MenuIcons(viewRouter: viewRouter, icon: friends_icon, label: friends_label, width: geometry.size.width/CGFloat(num_icons), height: geometry.size.height/CGFloat(height_ratio), assignedPage: "FriendsView")
                 MenuIcons(viewRouter: viewRouter, icon: settings_icon, label: settings_label, width: geometry.size.width/CGFloat(num_icons), height: geometry.size.height/CGFloat(height_ratio), assignedPage: "SettingsView")
             }
             .frame(width: geometry.size.width, height: geometry.size.height)

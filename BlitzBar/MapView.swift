@@ -42,15 +42,6 @@ struct MapView: View {
     )
     
     var body: some View {
-        
-        if viewRouter.currentPage == "SettingsView" {
-            SettingsView()
-        }else if viewRouter.currentPage == "FriendsView"{
-            FriendsView()
-        }else if viewRouter.currentPage == "ListView"{
-            ListView()
-        }
-        
         GeometryReader{ geometry in
             VStack{
                 Map(coordinateRegion: $region)
