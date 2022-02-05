@@ -12,9 +12,13 @@ struct SettingsView: View {
     
     var body: some View {
         GeometryReader{ geometry in
-            VStack{
-                Text("Settings")
-                Menu(viewRouter: viewRouter).frame(width: geometry.size.width, height: geometry.size.height / 15)
+            VStack(spacing: 0){
+                VStack{
+                    Text("Settings")
+                }
+                .frame(width: geometry.size.width, height: geometry.size.height)
+                Menu(viewRouter: viewRouter)
+                    .frame(width: geometry.size.width, height: geometry.size.height / 15)
             }
             .frame(width: geometry.size.width, height: geometry.size.height)
         }

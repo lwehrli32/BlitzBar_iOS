@@ -24,7 +24,7 @@ struct Menu: View {
     @State var list_label = "Bar List"
     
     let num_icons = 4
-    let height_ratio = 2.5
+    let height_ratio = 13
     
     var body: some View {
         GeometryReader{ geometry in
@@ -34,8 +34,9 @@ struct Menu: View {
                 MenuIcons(viewRouter: viewRouter, icon: friends_icon, label: friends_label, width: geometry.size.width/CGFloat(num_icons), height: geometry.size.height/CGFloat(height_ratio), assignedPage: "FriendsView")
                 MenuIcons(viewRouter: viewRouter, icon: settings_icon, label: settings_label, width: geometry.size.width/CGFloat(num_icons), height: geometry.size.height/CGFloat(height_ratio), assignedPage: "SettingsView")
             }
-            .frame(width: geometry.size.width, height: geometry.size.height)
+            .frame(width: geometry.size.width, height: 75)
             .background(.white)
+            .edgesIgnoringSafeArea(.all)
         }
     }
 }
@@ -60,9 +61,9 @@ struct MenuIcons: View {
             Spacer()
         }
         .onTapGesture {
-             viewRouter.currentPage = assignedPage
-         }
-        .edgesIgnoringSafeArea(.bottom)
+            viewRouter.currentPage = assignedPage
+        }
+        .edgesIgnoringSafeArea(.all)
         .padding(.horizontal, -4)
         .foregroundColor(viewRouter.currentPage == assignedPage ? Color(.black) : .gray)
     }
