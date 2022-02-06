@@ -24,7 +24,7 @@ struct Menu: View {
     @State var list_label = "Bar List"
     
     let num_icons = 4
-    let height_ratio = 13
+    let height_ratio = 2
     
     var body: some View {
         GeometryReader{ geometry in
@@ -34,9 +34,9 @@ struct Menu: View {
                 MenuIcons(viewRouter: viewRouter, icon: friends_icon, label: friends_label, width: geometry.size.width/CGFloat(num_icons), height: geometry.size.height/CGFloat(height_ratio), assignedPage: "FriendsView")
                 MenuIcons(viewRouter: viewRouter, icon: settings_icon, label: settings_label, width: geometry.size.width/CGFloat(num_icons), height: geometry.size.height/CGFloat(height_ratio), assignedPage: "SettingsView")
             }
-            .frame(width: geometry.size.width, height: 75)
+            //.frame(maxWidth: .infinity, minHeight: , maxHeight: )
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.white)
-            .edgesIgnoringSafeArea(.all)
         }
     }
 }

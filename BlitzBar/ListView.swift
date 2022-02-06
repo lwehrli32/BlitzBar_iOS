@@ -16,11 +16,9 @@ struct ListView: View {
                 VStack{
                     Text("List")
                 }
-                .frame(width: geometry.size.width, height: geometry.size.height)
+                .frame(width: .infinity, height: geometry.size.height - 45)
                 Menu(viewRouter: viewRouter)
-                    .frame(width: geometry.size.width, height: geometry.size.height / 15)
             }
-            .frame(width: geometry.size.width, height: geometry.size.height)
         }
     }
 }

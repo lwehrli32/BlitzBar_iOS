@@ -44,12 +44,11 @@ struct MapView: View {
     var body: some View {
         GeometryReader{ geometry in
             VStack(spacing: 0){
-                VStack{
-                    Map(coordinateRegion: $region)
-                }
+                Map(coordinateRegion: $region)
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width: .infinity, height: geometry.size.height - 45)
                 Menu(viewRouter: viewRouter)
             }
-            //.frame(width: geometry.size.width, height: geometry.size.height)
         }
     }
 }
